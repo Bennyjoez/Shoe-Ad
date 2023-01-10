@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    color: white;
+}
 :root {
     --primary-color: red;
     --primary-width: 350px;
@@ -49,7 +52,6 @@
 /* description */
 .description {
     width: var(--primary-width);
-    border: 1px solid beige;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,17 +60,33 @@
     border-radius: var(--primary-border-radius);
     /* display: none; */
 }
+.description-text {
+    color: darkgray;
+}
 /* sizes */
 .sizes {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .size {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 5px;
     border-radius: 10px;
     font-weight: 600;
 }
 .size:hover {
     background: whitesmoke;
+    color: var(--primary-color);
+}
+
+.buy {
+    display: flex;
+    justify-content: space-between;
+}
+.buy-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+
 }
