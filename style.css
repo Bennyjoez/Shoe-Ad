@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bakbak+One&family=Playfair+Display&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -122,6 +121,14 @@ body {
 }
 .heading {
     font-family: 'Bakbak One', cursive;
+}
+.price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Abril Fatface', cursive;
+}
+.price-cents {
+    font-size: 0.9rem;
 }
 
 @keyframes move {
