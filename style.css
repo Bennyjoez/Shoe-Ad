@@ -5,13 +5,14 @@
 }
 body {
     color: white;
+    width: 100vw;
 }
 :root {
     --primary-color: red;
     --primary-width: 350px;
     --primary-border-radius: 20px;
 }
-.top, .bottom {
+/* .top, .bottom {
     height: 50vh;
     width: 100%;
 }
@@ -20,19 +21,23 @@ body {
 }
 .bottom {
     background: white;
-}
+} */
 
 .container {
     width: 100vw;
-    height: 100vw;
+    min-height: 100vh;
+    position: relative;
+    background: blue;
 }
 .inner-container {
     width: 800px;
     height: 500px;
     display: flex;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 20%;
+    transform: translateY(-70%);
+    left: 50%;
+    transform: translateX(-20%);
 }
 .image-container {
     background: whitesmoke;
@@ -42,23 +47,40 @@ body {
     place-items: center;
     border-radius: var(--primary-border-radius);
 }
-.image-container:hover > .image {
-    rotate: 45deg;
+.inner-container:hover {
+    transform: translateX(-40%);
+}
+.inner-container:hover  .image {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 .image {
     width: 350px;
+}
+.image-container:hover + .description {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; 
 }
 
 /* description */
 .description {
     width: var(--primary-width);
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
     background: var(--primary-color);
     border-radius: var(--primary-border-radius);
-    /* display: none; */
+    position: absolute;
+    z-index: -1;
+}
+.description:hover {
+    left: 350px;
 }
 .description-text {
     color: darkgray;
@@ -82,11 +104,39 @@ body {
 .buy {
     display: flex;
     justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 30px;
 }
 .buy-button {
     padding: 5px 10px;
     border: none;
     border-radius: 10px;
     font-weight: 700;
+}
+.buy-button:hover {
+    background-color: rgb(243, 68, 68);
+}
 
+
+@keyframes move {
+    from {left: 0;}
+    to {left: 350px}
+}
+@keyframes rotate {
+    from {rotate: 0deg}
+    to {rotate: 45deg}
+}
+@keyframes moveDown {
+    from {top: 0px;}
+    to {top: 500px;}    
+}
+
+
+@media (max-width: 450px) {
+    .image-container:hover + .description {
+        animation-name: moveDown;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out; 
+    }
 }
