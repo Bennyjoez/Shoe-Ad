@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -120,7 +120,9 @@ body {
 .buy-button:hover {
     background-color: rgb(243, 68, 68);
 }
-
+.heading {
+    font-family: 'Bakbak One', cursive;
+}
 
 @keyframes move {
     from {left: 0;}
