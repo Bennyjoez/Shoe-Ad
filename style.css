@@ -6,16 +6,18 @@
     box-sizing: border-box;
 }
 
-body {
-    color: white;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
 :root {
-    --primary-color: red;
+    --primary-color: #FF9999;
+    --secondary-color: #ff3333;
+    --primary-text-color: #000000
     --primary-width: 350px;
     --primary-border-radius: 20px;
+}
+
+body {
+    color: var(--primary-text-color);
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .top, .bottom {
@@ -87,7 +89,7 @@ body {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: var(--primary-border-radius);
     position: absolute;
     z-index: -1;
@@ -98,7 +100,7 @@ body {
 }
 
 .description-text {
-    color: darkgray;
+    color: var(--primary-text-color);
     font-family: 'Playfair Display', serif;
     font-size: 18px;
 }
@@ -184,7 +186,7 @@ body {
         left: 0;
         top: 500px;
     }
-    
+
     .image-container:hover + .description {
         animation-name: moveDown;
         animation-duration: 1s;
